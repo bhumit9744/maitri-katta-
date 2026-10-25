@@ -1,0 +1,573 @@
+/* ==========================================================================
+   SECTION 05 — THE EXPERIENCE
+   Art-Directed Editorial Typography Overlapping Cinematic Restaurant Photo
+   ========================================================================== */
+
+.the-experience-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  min-height: 840px;
+  max-height: 1100px;
+  background-color: #171713;
+  color: #F3EEE5;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. Real Restaurant Photograph Background Layer
+   Positioned in the lower ~68% so the top ~32% is solid deep charcoal canvas
+   ========================================================================== */
+.experience-photo-layer {
+  position: absolute;
+  top: 32%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.experience-bg-img {
+  width: 100%;
+  height: 108%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: contrast(1.04) brightness(0.96) saturate(1.05);
+  will-change: transform;
+}
+
+/* Soft top gradient feather melting the photo ceiling into #171713 canvas */
+.experience-photo-feather {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    #171713 0%,
+    rgba(23, 23, 19, 0.8) 35%,
+    rgba(23, 23, 19, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Soft lower-left vignette to ensure supporting copy and CTA contrast */
+.experience-photo-vignette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 65%;
+  height: 65%;
+  background: radial-gradient(
+    circle at 10% 90%,
+    rgba(23, 23, 19, 0.88) 0%,
+    rgba(23, 23, 19, 0.5) 45%,
+    rgba(23, 23, 19, 0) 80%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Solid top charcoal base for absolute consistency */
+.experience-top-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background-color: #171713;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   2. Main Editorial Content Container
+   ========================================================================== */
+.experience-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 3.5rem 4.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   3. Top Editorial Metadata Header
+   ========================================================================== */
+.exp-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.meta-left-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.meta-section-num {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(243, 238, 229, 0.9);
+}
+
+.meta-dash {
+  color: rgba(243, 238, 229, 0.4);
+}
+
+.meta-section-name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: rgba(243, 238, 229, 0.78);
+  text-transform: uppercase;
+}
+
+.meta-rule-track {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 2rem;
+  width: 180px;
+  position: relative;
+}
+
+.meta-rule-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(243, 238, 229, 0.22);
+}
+
+.meta-rule-accent {
+  position: absolute;
+  left: 55px;
+  width: 38px;
+  height: 1px;
+  background-color: #D4A373;
+}
+
+.meta-right-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.meta-brand-name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: rgba(243, 238, 229, 0.78);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   4. Center Headline Typography Composition
+   "Have some" (upright, Canela Regular, Warm Ivory)
+   "time." (italic, Canela Italic, Champagne/Terracotta, overlapping photo)
+   ========================================================================== */
+.exp-headline-area {
+  position: relative;
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.exp-main-headline {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-transform: none;
+  position: relative;
+}
+
+/* Mask containers for smooth GSAP slide-up reveal */
+.headline-line-mask {
+  overflow: hidden;
+  display: block;
+}
+
+.headline-line-mask.italic-mask {
+  overflow: visible; /* prevents clipping of expressive italic ascenders and descenders */
+}
+
+/* Line 1: Warm Ivory, anchored in Charcoal Canvas */
+.headline-part-main {
+  display: block;
+  font-family: 'Canela', 'Canela Deck', 'Canela Text', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  font-size: clamp(4.8rem, 10vw, 10.8rem);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  color: #F3EEE5;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.55);
+  will-change: transform;
+}
+
+/* Line 2: Warm Golden Champagne Italic, crossing into Restaurant Photograph */
+.headline-part-italic {
+  display: inline-block;
+  font-family: 'Canela', 'Canela Deck', 'Canela Text', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  font-size: clamp(5.2rem, 11vw, 11.8rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.015em;
+  line-height: 0.82;
+  color: #D4A373;
+  margin-left: clamp(2.4rem, 5.8vw, 7.2rem);
+  margin-top: -0.06em;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.75);
+  position: relative;
+  z-index: 5;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.headline-dot {
+  font-style: normal;
+  color: #D4A373;
+}
+
+/* Upper-Right Secondary Copy Block */
+.exp-right-tagline {
+  position: absolute;
+  right: 6.5rem;
+  top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: rgba(243, 238, 229, 0.74);
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Far-Right Vertical Paging Index Indicator (Desktop) */
+.exp-right-index {
+  position: absolute;
+  right: 4.5rem;
+  top: 6.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.index-line {
+  width: 1px;
+  height: 44px;
+  background-color: rgba(243, 238, 229, 0.2);
+  margin-bottom: 0.35rem;
+}
+
+.index-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;
+}
+
+.index-num {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: rgba(243, 238, 229, 0.32);
+  transition: color 0.3s ease;
+}
+
+.index-num.is-active {
+  color: #D4A373;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.active-dash {
+  font-weight: 400;
+  color: #D4A373;
+}
+
+/* ==========================================================================
+   5. Bottom-Left Supporting Copy & CTA Link
+   ========================================================================== */
+.exp-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-width: 480px;
+  margin-top: auto;
+  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.exp-supporting-text {
+  font-family: 'Canela', 'Canela Deck', 'Canela Text', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  font-size: clamp(1.15rem, 1.45vw, 1.35rem);
+  font-weight: 400;
+  font-style: normal;
+  color: #F3EEE5;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  margin: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+}
+
+.exp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.15rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 0;
+  width: fit-content;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.exp-cta-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 163, 115, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D4A373;
+  background-color: rgba(23, 23, 19, 0.45);
+  backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.cta-arrow-icon {
+  transition: transform 0.25s ease;
+}
+
+.exp-cta-label {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #F3EEE5;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.cta-trailing-rule {
+  width: 80px;
+  height: 1px;
+  background-color: rgba(243, 238, 229, 0.3);
+  transition: all 0.35s ease;
+}
+
+.exp-cta-btn:hover .exp-cta-circle {
+  border-color: #D4A373;
+  background-color: #D4A373;
+  color: #171713;
+  transform: scale(1.08);
+}
+
+.exp-cta-btn:hover .cta-arrow-icon {
+  transform: translate(2px, -2px);
+}
+
+.exp-cta-btn:hover .exp-cta-label {
+  color: #D4A373;
+}
+
+.exp-cta-btn:hover .cta-trailing-rule {
+  width: 115px;
+  background-color: #D4A373;
+}
+
+.exp-cta-btn:focus-visible {
+  outline: 2px solid #D4A373;
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   6. Responsive Breakpoints
+   ========================================================================== */
+
+/* Large Tablet (1025px to 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .experience-container {
+    padding: 3rem 3rem 3rem;
+  }
+
+  .exp-right-tagline {
+    right: 4.5rem;
+    font-size: 0.64rem;
+  }
+
+  .exp-right-index {
+    right: 2.5rem;
+  }
+
+  .headline-part-main {
+    font-size: clamp(4.2rem, 8.8vw, 7.8rem);
+  }
+
+  .headline-part-italic {
+    font-size: clamp(4.5rem, 9.6vw, 8.6rem);
+  }
+}
+
+/* Tablet (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .the-experience-section {
+    min-height: 85vh;
+    height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .experience-photo-layer {
+    top: 36%;
+  }
+
+  .experience-container {
+    padding: 3rem 2.5rem 3rem;
+    min-height: 85vh;
+  }
+
+  .meta-rule-track {
+    display: none;
+  }
+
+  .exp-right-index {
+    display: none;
+  }
+
+  .exp-right-tagline {
+    right: 2.5rem;
+    top: 0.5rem;
+    font-size: 0.62rem;
+  }
+
+  .headline-part-main {
+    font-size: clamp(3.8rem, 8vw, 5.5rem);
+  }
+
+  .headline-part-italic {
+    font-size: clamp(4.2rem, 8.8vw, 6.2rem);
+    margin-left: 3rem;
+  }
+
+  .exp-bottom-left {
+    margin-top: 4rem;
+  }
+}
+
+/* Mobile (<= 768px): Deliberately recomposed layout */
+@media (max-width: 768px) {
+  .the-experience-section {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 3.5rem;
+  }
+
+  .experience-top-canvas {
+    height: 38%;
+  }
+
+  .experience-photo-layer {
+    top: 36%;
+    bottom: 0;
+  }
+
+  .experience-bg-img {
+    height: 100%;
+    object-position: center top;
+  }
+
+  .experience-container {
+    padding: 2.25rem 1.25rem 2.25rem;
+    min-height: auto;
+  }
+
+  .exp-meta-bar {
+    margin-bottom: 1.5rem;
+  }
+
+  .meta-rule-track {
+    display: none;
+  }
+
+  .meta-right-group {
+    display: none;
+  }
+
+  .exp-right-index {
+    display: none;
+  }
+
+  .exp-right-tagline {
+    position: static;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    line-height: 1.5;
+  }
+
+  .exp-main-headline {
+    margin-top: 0.25rem;
+  }
+
+  .headline-part-main {
+    font-size: clamp(2.8rem, 12vw, 4.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+  }
+
+  .headline-part-italic {
+    font-size: clamp(3.2rem, 13.5vw, 4.8rem);
+    line-height: 0.88;
+    margin-left: 1.25rem;
+    margin-top: 0.05em;
+  }
+
+  .exp-bottom-left {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    gap: 1.35rem;
+  }
+
+  .exp-supporting-text {
+    font-size: 1.05rem;
+  }
+
+  .cta-trailing-rule {
+    width: 35px;
+  }
+}

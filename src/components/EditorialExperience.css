@@ -135,12 +135,9 @@
 .exp-headline {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 6.2vw, 6.2rem);
-  font-weight: 500;
-  line-height: 0.92;
-  letter-spacing: -0.015em;
+  font-family: 'Canela', 'Canela Deck', 'Canela Text', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
   margin: 0;
+  text-align: left;
 }
 
 .headline-line {
@@ -148,11 +145,25 @@
 }
 
 .headline-line.line-charcoal {
-  color: var(--color-charcoal);
+  font-family: 'Canela', 'Canela Deck', 'Canela Text', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+  font-weight: 400;
+  font-style: normal;
+  color: #24251F;
+  line-height: 0.95;
+  letter-spacing: -0.018em;
 }
 
 .headline-line.line-terracotta {
-  color: var(--color-terracotta);
+  font-family: 'Canela', 'Canela Deck', 'Canela Text', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  font-size: clamp(4rem, 6.8vw, 6.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #A6533B;
+  line-height: 0.88;
+  letter-spacing: -0.022em;
+  margin-top: -0.09em;
+  white-space: nowrap;
 }
 
 /* Supporting Copy */
@@ -403,6 +414,17 @@
     flex: 1 1 48%;
   }
 
+  .headline-line.line-charcoal {
+    font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+    line-height: 0.96;
+  }
+
+  .headline-line.line-terracotta {
+    font-size: clamp(3.5rem, 6.2vw, 5.4rem);
+    line-height: 0.9;
+    margin-top: -0.08em;
+  }
+
   .exp-visual-composition {
     flex: 1 1 52%;
     min-height: 520px;
@@ -441,7 +463,20 @@
   }
 
   .exp-headline {
-    font-size: clamp(3.2rem, 13vw, 4.4rem);
+    width: 100%;
+  }
+
+  .headline-line.line-charcoal {
+    font-size: clamp(2.3rem, 9.5vw, 3.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+  }
+
+  .headline-line.line-terracotta {
+    font-size: clamp(2.9rem, 12.2vw, 4.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    margin-top: -0.06em;
   }
 
   .exp-subcopy {

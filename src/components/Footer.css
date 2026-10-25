@@ -1,213 +1,574 @@
-/* Site Footer */
-.site-footer {
-  background-color: #1e1f1a;
-  color: #e3ded6;
+/* ==========================================================================
+   FINAL EDITORIAL FOOTER — MAITRI KATTA FAMILY GARDEN RESTAURANT
+   Cinematic Night Photograph flowing into Warm Ivory Editorial Spread
+   ========================================================================== */
+
+.editorial-site-footer {
   position: relative;
+  width: 100%;
+  background-color: var(--color-ivory, #F3EEE5);
+  color: var(--color-charcoal, #24251F);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Celebrations Strip */
-.celebrations-strip {
-  background-color: var(--color-olive);
-  color: var(--color-ivory-light);
-  padding: 4rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+/* ==========================================================================
+   1. UPPER ZONE — CINEMATIC PANORAMIC PHOTOGRAPH & SMOOTH IVORY CURVE
+   ========================================================================== */
+.footer-panoramic-stage {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 24vw, 340px);
+  background-color: #161713;
+  overflow: hidden;
 }
 
-.celebrations-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
+.panoramic-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  display: block;
+  filter: contrast(1.05) brightness(0.92) saturate(1.05);
 }
 
-.celebrations-eyebrow {
-  font-size: 0.68rem;
-  letter-spacing: 0.28em;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: rgba(243, 238, 228, 0.75);
+/* Soft top gradient to ensure caption contrast */
+.panoramic-top-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  background: linear-gradient(
+    to bottom,
+    rgba(22, 23, 19, 0.65) 0%,
+    rgba(22, 23, 19, 0.25) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
 }
 
-.celebrations-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
-  font-weight: 500;
-  margin: 0.4rem 0 0.6rem 0;
-}
-
-.celebrations-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(243, 238, 228, 0.85);
-  max-width: 620px;
-}
-
-.btn-events-inquire {
-  padding: 0.85rem 2rem;
-  background-color: var(--color-ivory-light);
-  color: var(--color-charcoal);
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  transition: var(--transition-fast);
-  white-space: nowrap;
-}
-
-.btn-events-inquire:hover {
-  background-color: var(--color-cream);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer Main */
-.footer-main {
-  padding: 5rem 2rem 4rem 2rem;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
-
-@media (min-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1.4fr 0.8fr 1.2fr;
-  }
-}
-
-.footer-brand-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
-}
-
-.footer-logo {
-  height: 38px;
-  width: auto;
-  background-color: rgba(243, 238, 228, 0.08);
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.footer-brand-titles h4 {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: 0.05em;
-}
-
-.footer-brand-titles p {
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-taupe);
-}
-
-.footer-tagline {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: #a8a49c;
-  max-width: 340px;
-}
-
-.footer-heading {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 1.4rem;
-  text-transform: uppercase;
-}
-
-.footer-nav {
-  list-style: none;
+/* Upper-Right Caption */
+.panoramic-caption {
+  position: absolute;
+  top: 2.25rem;
+  right: 3.5rem;
+  z-index: 3;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-}
-
-.footer-nav a {
-  font-size: 0.88rem;
-  color: #b5b0a6;
-  transition: color 0.2s ease;
-}
-
-.footer-nav a:hover {
-  color: #fff;
-}
-
-.footer-meta-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.meta-row {
-  display: flex;
   align-items: flex-start;
-  gap: 0.85rem;
+  gap: 0.25rem;
+}
+
+.caption-line {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+.caption-rule {
+  width: 36px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.35rem;
+}
+
+/* Single Responsive Organic Ivory Curve Divider (Clean vector edge) */
+.panoramic-curve-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: clamp(80px, 9vw, 130px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.curve-divider-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   2. LOWER ZONE — WARM IVORY EDITORIAL FOOTER SPREAD
+   ========================================================================== */
+.footer-editorial-lower {
+  background-color: var(--color-ivory, #F3EEE5);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.footer-content-wrapper {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 3.5rem 2.75rem;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   3. BRAND BLOCK: VITA LENTA-INSPIRED REFINED DISPLAY TYPOGRAPHY
+   ========================================================================== */
+.footer-brand-section {
+  position: relative;
+  z-index: 10;
+  margin-top: -65px; /* Elegantly nests into the ivory curve dome */
+  margin-bottom: 2rem;
+}
+
+.brand-lockup-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Wordmark Block */
+.brand-wordmark-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-wordmark-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: 0.05em;
+  color: var(--color-charcoal, #24251F);
+  text-transform: uppercase;
+}
+
+.wordmark-row {
+  display: block;
+}
+
+.brand-wordmark-sub {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--color-charcoal, #24251F);
+  text-transform: uppercase;
+  margin-top: 0.65rem;
+  margin-bottom: 0;
+}
+
+/* Understated Terracotta Vertical Rule */
+.brand-divider-rule {
+  width: 1px;
+  height: 70px;
+  background-color: var(--color-terracotta, #A6533B);
+  margin: 0 2.5rem;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* 3-Line Refined Italic Tagline */
+.brand-tagline-motto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  font-family: 'Canela', 'Canela Deck', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.18rem, 1.5vw, 1.45rem);
+  color: var(--color-terracotta, #A6533B);
+  line-height: 1.38;
+}
+
+.brand-tagline-motto span {
+  display: block;
+}
+
+/* Subtle Horizontal Divider Rule */
+.footer-divider-rule {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(37, 37, 31, 0.16);
+  border: none;
+  margin: 0 0 2.25rem 0;
+}
+
+/* ==========================================================================
+   4. FOUR BALANCED INFORMATION COLUMNS
+   ========================================================================== */
+.footer-info-grid {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) minmax(280px, 1.65fr) minmax(160px, 1.1fr) minmax(210px, 1.35fr);
+  gap: 2.25rem;
+  align-items: flex-start;
+  margin-bottom: 2.25rem;
+}
+
+.footer-info-col {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1.75rem;
+  border-right: 1px solid rgba(37, 37, 31, 0.14);
+  min-height: 150px;
+}
+
+.footer-info-col:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.info-col-title {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--color-terracotta, #A6533B);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1.15rem;
+}
+
+/* Column 1: EXPLORE Links */
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-nav-list a {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-secondary-text, #625F56);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.footer-nav-list a:hover {
+  color: var(--color-charcoal, #24251F);
+  transform: translateX(3px);
+}
+
+.footer-nav-list a:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 3px;
+}
+
+/* Column 2: CONTACT Details (Generous width for address) */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+}
+
+.contact-phone a,
+.contact-email a {
+  color: var(--color-charcoal, #24251F);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.contact-phone a:hover,
+.contact-email a:hover {
+  color: var(--color-terracotta, #A6533B);
+}
+
+.contact-address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  margin-top: 0.35rem;
+  color: var(--color-secondary-text, #625F56);
+  line-height: 1.5;
+}
+
+.address-line {
+  margin: 0;
   font-size: 0.85rem;
 }
 
-.meta-icon {
-  color: var(--color-taupe);
-  margin-top: 3px;
+/* Column 3: VISIT Details */
+.visit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+}
+
+.visit-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-charcoal, #24251F);
+  margin: 0;
+}
+
+.visit-hours {
+  font-size: 0.85rem;
+  color: var(--color-secondary-text, #625F56);
+  margin: 0 0 1.25rem 0;
+}
+
+.visit-directions-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.btn-footer-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-terracotta, #A6533B);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: all 0.25s ease;
+}
+
+.btn-footer-directions:hover {
+  color: var(--color-charcoal, #24251F);
+  transform: translateX(2px);
+}
+
+.btn-footer-directions:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 3px;
+}
+
+.directions-arrow {
+  font-size: 0.82rem;
+  transition: transform 0.25s ease;
+}
+
+.btn-footer-directions:hover .directions-arrow {
+  transform: translate(2px, -2px);
+}
+
+.directions-underline {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-terracotta, #A6533B);
+  transition: all 0.25s ease;
+}
+
+.btn-footer-directions:hover ~ .directions-underline {
+  background-color: var(--color-charcoal, #24251F);
+  transform: scaleX(1.05);
+}
+
+/* Column 4: BRAND NOTE (Compact Editorial Unit) */
+.brand-note-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.brand-note-botanical {
+  width: 24px;
+  height: 55px;
   flex-shrink: 0;
 }
 
-.meta-row strong {
-  display: block;
-  color: #fff;
-  font-size: 0.85rem;
+.brand-note-rule {
+  width: 1px;
+  height: 52px;
+  background-color: rgba(37, 37, 31, 0.18);
+  flex-shrink: 0;
 }
 
-.meta-row p {
-  color: #9e9a92;
-  font-size: 0.82rem;
-  margin-top: 0.15rem;
+.brand-note-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.brand-note-quote {
+  font-family: 'Canela', 'Canela Deck', 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-size: 0.92rem;
   line-height: 1.45;
+  color: var(--color-charcoal, #24251F);
+  margin: 0;
 }
 
-/* Footer Bottom */
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.8rem 2rem;
-  font-size: 0.75rem;
-  color: #7d7a72;
+.brand-note-accent-line {
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-terracotta, #A6533B);
 }
 
-.bottom-container {
+/* ==========================================================================
+   5. COMPACT FOOTER BOTTOM STRIP
+   ========================================================================= */
+.footer-bottom-strip {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+  width: 100%;
+  padding-top: 0.5rem;
 }
 
-.footer-subtle {
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
+.bottom-copyright,
+.bottom-motto {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--color-secondary-text, #625F56);
+  margin: 0;
+  text-transform: uppercase;
 }
 
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Large Tablet (1025px to 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .footer-content-wrapper {
+    padding: 0 2.5rem 2.5rem;
+  }
+
+  .footer-info-grid {
+    grid-template-columns: minmax(110px, 1fr) minmax(240px, 1.5fr) minmax(140px, 1.1fr) minmax(180px, 1.25fr);
+    gap: 1.75rem;
+  }
+
+  .brand-divider-rule {
+    margin: 0 2rem;
+  }
+}
+
+/* Tablet (769px to 1024px): Balanced 2x2 grid */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-panoramic-stage {
+    height: 260px;
+  }
+
+  .footer-brand-section {
+    margin-top: -45px;
+    margin-bottom: 2rem;
+  }
+
+  .footer-content-wrapper {
+    padding: 0 2.25rem 2.5rem;
+  }
+
+  .brand-divider-rule {
+    margin: 0 2rem;
+  }
+
+  .footer-info-grid {
+    grid-template-columns: 1fr 1.35fr;
+    gap: 2.25rem;
+  }
+
+  .footer-info-col {
+    border-right: none;
+    padding-right: 0;
+    min-height: auto;
+  }
+
+  .footer-info-col:nth-child(odd) {
+    border-right: 1px solid rgba(37, 37, 31, 0.14);
+    padding-right: 2rem;
+  }
+}
+
+/* Mobile (<= 768px): Stacks into Single Editorial Page */
 @media (max-width: 768px) {
-  .celebrations-strip {
-    padding: 3rem 1.4rem;
+  .footer-panoramic-stage {
+    height: 210px;
   }
-  .footer-main {
-    padding: 3.5rem 1.4rem;
+
+  .panoramic-caption {
+    top: 1.25rem;
+    right: 1.25rem;
   }
-  .bottom-container {
+
+  .caption-line {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .footer-content-wrapper {
+    padding: 0 1.25rem 2.25rem;
+  }
+
+  .footer-brand-section {
+    margin-top: -25px;
+    margin-bottom: 1.75rem;
+  }
+
+  .brand-lockup-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .brand-divider-rule {
+    width: 50px;
+    height: 1px;
+    margin: 0;
+  }
+
+  .brand-wordmark-title {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+
+  .brand-tagline-motto {
+    font-size: 1.15rem;
+  }
+
+  .footer-divider-rule {
+    margin: 0 0 1.75rem 0;
+  }
+
+  .footer-info-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-info-col {
+    border-right: none;
+    padding-right: 0;
+    min-height: auto;
+    border-bottom: 1px solid rgba(37, 37, 31, 0.12);
+    padding-bottom: 1.75rem;
+  }
+
+  .footer-info-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .footer-nav-list li a {
+    padding: 0.35rem 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-bottom-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
   }
 }

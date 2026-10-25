@@ -3,6 +3,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import EditorialExperience from './components/EditorialExperience';
 import MenuSection from './components/MenuSection';
+import TheCelebration from './components/TheCelebration';
+import TheExperience from './components/TheExperience';
+import TheLocation from './components/TheLocation';
 import Footer from './components/Footer';
 import SpaceModal from './components/SpaceModal';
 import BookingModal from './components/BookingModal';
@@ -30,8 +33,17 @@ export default function App() {
         {/* Section 2: Editorial Experience — Made for Together */}
         <EditorialExperience onOpenSpace={handleOpenSpace} />
 
-        {/* Section 3: The Culinary Repertoire / Menu Showcase */}
+        {/* Section 3: The Culinary Repertoire / From the Kitchen */}
         <MenuSection onOpenBooking={handleOpenBooking} />
+
+        {/* Section 4: The Celebration — Editorial Photography Wall */}
+        <TheCelebration onOpenBooking={handleOpenBooking} />
+
+        {/* Section 5: The Experience — Have some time. */}
+        <TheExperience onOpenSpace={handleOpenSpace} onOpenBooking={handleOpenBooking} />
+
+        {/* Section 6: Location — Editorial Two-Page Food Magazine Spread */}
+        <TheLocation />
       </main>
 
       {/* Footer & Location Anchor */}

@@ -1,21 +1,25 @@
 :root {
-  --color-ivory: #F3EEE4;
-  --color-ivory-light: #FAF7F2;
-  --color-cream: #E9E0D2;
-  --color-charcoal: #24251F;
-  --color-charcoal-light: #44453E;
-  --color-charcoal-muted: rgba(36, 37, 31, 0.65);
-  --color-charcoal-faint: rgba(36, 37, 31, 0.12);
+  --color-ivory: #F3EEE5;
+  --color-ivory-light: #FBF8F3;
+  --color-cream: #EAE3D6;
+  --color-charcoal: #25251F;
+  --color-charcoal-light: #48453D;
+  --color-charcoal-muted: rgba(37, 37, 31, 0.65);
+  --color-charcoal-faint: rgba(37, 37, 31, 0.1);
   --color-olive: #3B4029;
-  --color-olive-dark: #2c301e;
+  --color-olive-dark: #2A2E1D;
   --color-olive-light: #52593b;
   --color-taupe: #A59A86;
   --color-taupe-light: #C2B8A6;
   --color-terracotta: #A6533B;
+  --color-secondary-text: #625F56;
+  --color-border-fine: rgba(37, 37, 31, 0.22);
+  --color-border-faint: rgba(37, 37, 31, 0.08);
   --color-white: #FFFFFF;
 
-  --font-serif: 'Bodoni Moda', Garamond, 'Times New Roman', Georgia, serif;
+  --font-serif: 'Bodoni Moda', Didot, 'Didot LT STD', 'Bodoni MT', Garamond, Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Caveat', cursive, sans-serif;
 
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.25s ease-out;

@@ -24,8 +24,7 @@ export default function Navbar({ onOpenBooking }) {
     { id: 'menu', label: 'MENU', href: '#menu' },
     { id: 'space', label: 'OUR SPACE', href: '#experience' },
     { id: 'celebrations', label: 'CELEBRATIONS', href: '#celebrations' },
-    { id: 'events', label: 'EVENTS', href: '#events' },
-    { id: 'contact', label: 'CONTACT', href: '#contact' },
+    { id: 'location', label: 'LOCATION', href: '#location' },
   ];
 
   const handleNavClick = (e, item) => {
@@ -44,8 +43,8 @@ export default function Navbar({ onOpenBooking }) {
                 src="/assets/maitri-katta-logo-transparent.png"
                 alt="मैत्री कट्टा - Maitri Katta Logo"
                 className="brand-logo-img"
-                width="84"
-                height="42"
+                width="54"
+                height="47"
               />
             </div>
             <div className="brand-divider"></div>

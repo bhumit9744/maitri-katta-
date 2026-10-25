@@ -138,7 +138,7 @@ export default function Hero({ onOpenSpace }) {
       {/* Subtle Botanical Leaf Shadow in Lower-Left Ivory Canvas */}
       <div className="botanical-shadow-layer" aria-hidden="true">
         <svg viewBox="0 0 600 600" className="botanical-svg" fill="none">
-          <g filter="url(#leaf-blur)" opacity="0.13" fill="#24251F">
+          <g filter="url(#leaf-blur)" opacity="0.03" fill="#25251F">
             <path d="M 0 600 C 60 520 120 460 210 440 C 230 460 200 510 180 540 C 240 500 290 470 340 470 C 340 500 300 550 250 580 C 310 570 380 580 430 600 Z" />
             <path d="M 50 600 C 100 500 180 410 280 370 C 290 390 260 430 220 460 C 280 410 350 380 410 390 C 390 420 330 460 280 480 C 350 470 420 490 480 530 Z" />
           </g>
