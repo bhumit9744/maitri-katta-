@@ -1,0 +1,562 @@
+/* Hero Section Base */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  background-color: var(--color-ivory);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.svg-clip-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Botanical Leaf Shadows Layer */
+.botanical-shadow-layer {
+  position: absolute;
+  bottom: -40px;
+  left: -20px;
+  width: clamp(280px, 35vw, 550px);
+  height: clamp(280px, 35vw, 550px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.botanical-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero Stage */
+.hero-stage {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  align-items: stretch;
+}
+
+/* Leftmost Vertical Navigation Rail (Desktop) */
+.rail-container {
+  display: none;
+  position: relative;
+  z-index: 20;
+  width: 72px;
+  padding: 6.8rem 0 2.5rem 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px solid rgba(36, 37, 31, 0.08);
+}
+
+@media (min-width: 1100px) {
+  .rail-container {
+    display: flex;
+  }
+}
+
+.rail-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--color-charcoal);
+  font-feature-settings: 'tnum';
+}
+
+.counter-current {
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+.counter-divider {
+  color: var(--color-taupe);
+  opacity: 0.7;
+}
+
+.counter-total {
+  color: var(--color-taupe);
+}
+
+.rail-divider {
+  width: 1px;
+  background-color: rgba(36, 37, 31, 0.16);
+}
+
+.rail-divider.top-divider {
+  height: 35px;
+  margin: 0.8rem 0;
+}
+
+.rail-divider.bottom-divider {
+  height: 45px;
+  margin: 0.8rem 0;
+}
+
+/* Thumbnails */
+.rail-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.rail-thumb-btn {
+  position: relative;
+  width: 38px;
+  height: 48px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(36, 37, 31, 0.18);
+  padding: 0;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  background-color: var(--color-cream);
+}
+
+.rail-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  filter: brightness(0.92) contrast(1.05);
+}
+
+.rail-thumb-btn:hover {
+  border-color: var(--color-olive);
+  transform: translateX(2px);
+}
+
+.rail-thumb-btn:hover .rail-thumb-img {
+  transform: scale(1.08);
+  filter: brightness(1.02);
+}
+
+.rail-thumb-btn.is-active {
+  border-color: var(--color-olive);
+  box-shadow: 0 0 0 1px var(--color-olive), 0 3px 8px rgba(59, 64, 41, 0.2);
+}
+
+.thumb-active-dot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-ivory);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.rail-thumb-btn.is-active .thumb-active-dot {
+  opacity: 1;
+}
+
+/* Vertical Brand Label */
+.rail-vertical-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  font-weight: 500;
+  color: var(--color-taupe);
+  text-transform: uppercase;
+}
+
+/* Main Editorial Typography Column */
+.hero-content-column {
+  position: relative;
+  z-index: 10;
+  flex: 1 1 45%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7.2rem 2.5rem 4.5rem 3.5rem;
+}
+
+@media (min-width: 1100px) {
+  .hero-content-column {
+    padding-left: 3rem;
+  }
+}
+
+.editorial-wrapper {
+  max-width: 580px;
+}
+
+/* Headline Block: MAITRI [divider] KATTA */
+.headline-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-row {
+  overflow: visible;
+  line-height: 0.88;
+}
+
+.hero-word {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(3.8rem, 8.2vw, 8.2rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 0.88;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-divider-line {
+  width: clamp(250px, 34vw, 440px);
+  height: 1px;
+  background-color: rgba(36, 37, 31, 0.28);
+  margin: 1.1rem 0 1.15rem 0;
+}
+
+/* Supporting Hierarchy */
+.hero-meta-block {
+  margin-top: 1.8rem;
+}
+
+.hero-category-label {
+  font-size: clamp(0.72rem, 1.1vw, 0.86rem);
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-subtext {
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  font-weight: 400;
+  color: var(--color-charcoal-light);
+  letter-spacing: 0.02em;
+  margin-top: 0.75rem;
+}
+
+/* Primary Actions */
+.hero-cta-group {
+  margin-top: 2.4rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
+
+.btn-explore-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.82rem 1.85rem;
+  background-color: var(--color-olive);
+  color: var(--color-ivory-light);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(59, 64, 41, 0.16);
+}
+
+.btn-explore-menu:hover {
+  background-color: var(--color-olive-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 64, 41, 0.25);
+}
+
+.btn-arrow {
+  transition: transform 0.25s ease;
+}
+
+.btn-explore-menu:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.btn-watch-space {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: transparent;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  padding: 0.4rem 0.2rem;
+  transition: var(--transition-fast);
+}
+
+.play-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(36, 37, 31, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  background-color: rgba(243, 238, 228, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.play-triangle {
+  margin-left: 2px;
+  color: var(--color-charcoal);
+}
+
+.btn-watch-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+}
+
+.btn-watch-space:hover .play-icon-circle {
+  border-color: var(--color-olive);
+  background-color: var(--color-cream);
+  transform: scale(1.08);
+}
+
+.btn-watch-space:hover .btn-watch-text {
+  color: var(--color-olive);
+}
+
+/* Circular Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.8rem;
+  left: clamp(44%, 48vw, 53%);
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) translateY(3px);
+}
+
+.scroll-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(36, 37, 31, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background-color: rgba(243, 238, 228, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(36, 37, 31, 0.05);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.scroll-indicator:hover .scroll-circle {
+  border-color: var(--color-olive);
+  background-color: var(--color-cream);
+}
+
+.scroll-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-charcoal);
+}
+
+.scroll-text {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+}
+
+.scroll-stem {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(36, 37, 31, 0.25);
+}
+
+/* Right Dominant Restaurant Photograph with Organic Arch */
+.hero-photo-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 5;
+  clip-path: url(#hero-organic-arch);
+  -webkit-clip-path: url(#hero-organic-arch);
+  background-color: #1a1b16;
+  overflow: hidden;
+}
+
+.hero-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-media-box {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.55s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-media-box.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.photo-media-box.is-fading {
+  opacity: 0.4;
+  transform: scale(1.02);
+}
+
+.hero-main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: contrast(1.04) brightness(0.98);
+}
+
+.photo-ambient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 25, 20, 0.15) 0%,
+    transparent 35%,
+    rgba(24, 25, 20, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating Vertical Micro-Typography in Top-Right */
+.hero-tag-column {
+  position: absolute;
+  top: 5.5rem;
+  right: 2.8rem;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  pointer-events: none;
+}
+
+.hero-tag-column span {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+  text-transform: uppercase;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero-content-column {
+    padding: 6.5rem 1.8rem 3.5rem 2rem;
+    flex: 1 1 50%;
+  }
+
+  .hero-photo-container {
+    width: 52%;
+  }
+
+  .hero-divider-line {
+    width: 280px;
+  }
+
+  .scroll-indicator {
+    left: 48%;
+  }
+
+  .hero-tag-column {
+    top: 5rem;
+    right: 1.8rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-stage {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-content-column {
+    max-width: 100%;
+    padding: 1.5rem 1.4rem 2rem 1.4rem;
+  }
+
+  .hero-word {
+    font-size: clamp(3.2rem, 16vw, 4.6rem);
+  }
+
+  .hero-divider-line {
+    width: 100%;
+    max-width: 260px;
+    margin: 0.8rem 0;
+  }
+
+  .hero-cta-group {
+    margin-top: 1.8rem;
+    gap: 1.2rem;
+  }
+
+  .hero-photo-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 380px;
+    clip-path: none;
+    -webkit-clip-path: none;
+    border-radius: 20px 20px 0 0;
+    margin-top: 1rem;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .hero-tag-column {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .botanical-shadow-layer {
+    display: none;
+  }
+}

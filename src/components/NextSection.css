@@ -1,0 +1,254 @@
+/* Experience Section */
+.experience-section {
+  position: relative;
+  background-color: var(--color-cream);
+  padding: 6.5rem 2rem 7rem 2rem;
+  border-top: 1px solid rgba(36, 37, 31, 0.08);
+  overflow: hidden;
+}
+
+.experience-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.experience-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4.5rem auto;
+}
+
+.header-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.ornament-line {
+  width: 40px;
+  height: 1px;
+  background-color: rgba(36, 37, 31, 0.2);
+}
+
+.ornament-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-olive);
+}
+
+.experience-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.experience-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-charcoal);
+  margin-top: 1rem;
+}
+
+/* 3-Card Grid */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.2rem;
+}
+
+@media (min-width: 768px) {
+  .experience-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.experience-card {
+  background-color: var(--color-ivory);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(36, 37, 31, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(36, 37, 31, 0.08);
+  border-color: rgba(59, 64, 41, 0.25);
+}
+
+.card-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background-color: #24251F;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-card:hover .card-image {
+  transform: scale(1.06);
+}
+
+.card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(243, 238, 228, 0.92);
+  backdrop-filter: blur(6px);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  border-radius: 2px;
+}
+
+.card-content {
+  padding: 1.8rem 1.8rem 2.2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-meta-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.card-index {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-taupe);
+  letter-spacing: 0.1em;
+}
+
+.card-meta-tag {
+  font-size: 0.68rem;
+  color: var(--color-charcoal-muted);
+  letter-spacing: 0.06em;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-charcoal);
+  margin-bottom: 0.75rem;
+}
+
+.card-description {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--color-charcoal-light);
+  margin-top: auto;
+}
+
+/* Transition Banner */
+.experience-cta-strip {
+  margin-top: 4.5rem;
+  padding: 2.5rem 3rem;
+  background-color: var(--color-ivory);
+  border: 1px solid rgba(36, 37, 31, 0.1);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
+
+.cta-strip-text h4 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+}
+
+.cta-strip-text p {
+  font-size: 0.82rem;
+  color: var(--color-taupe);
+  letter-spacing: 0.08em;
+  margin-top: 0.35rem;
+}
+
+.cta-strip-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-strip-primary {
+  padding: 0.8rem 1.8rem;
+  background-color: var(--color-olive);
+  color: var(--color-ivory-light);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.btn-strip-primary:hover {
+  background-color: var(--color-olive-dark);
+}
+
+.btn-strip-secondary {
+  padding: 0.8rem 1.6rem;
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border: 1px solid rgba(36, 37, 31, 0.25);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.btn-strip-secondary:hover {
+  border-color: var(--color-olive);
+  color: var(--color-olive);
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 4.5rem 1.4rem 5rem 1.4rem;
+  }
+  .experience-cta-strip {
+    padding: 1.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cta-strip-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+  .btn-strip-primary, .btn-strip-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,15 @@
+.maitri-app {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  position: relative;
+  overflow-x: hidden;
+}
+
+#main-content {
+  flex: 1 0 auto;
+  position: relative;
+}
