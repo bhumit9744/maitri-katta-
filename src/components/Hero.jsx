@@ -102,7 +102,21 @@ export default function Hero({ onOpenSpace }) {
         y: -15,
         opacity: 0,
         duration: 0.75,
-      }, '-=0.7');
+      }, '-=0.7')
+      .from('.hero-character-layer', {
+        x: 65,
+        y: 55,
+        rotation: 2.2,
+        opacity: 0,
+        duration: 0.85,
+        ease: 'power3.out',
+      }, '-=0.65')
+      .from('.hero-handwritten-caption', {
+        scale: 0.9,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'back.out(1.5)',
+      }, '-=0.35');
     }, heroRef);
 
     return () => ctx.revert();
@@ -240,6 +254,16 @@ export default function Hero({ onOpenSpace }) {
           </div>
         </div>
 
+        {/* Refined Handwritten Terracotta Caption (Ivory pocket, beside curve, above Circuit) */}
+        <div className="hero-handwritten-caption" aria-label="Aao, Maitri Katta Chale?">
+          <span className="hero-script-line hero-script-line-1">Aao</span>
+          <span className="hero-script-line hero-script-line-2">Maitri Katta</span>
+          <span className="hero-script-line hero-script-line-3">Chale?</span>
+          <svg className="hero-underline-svg" viewBox="0 0 68 12" fill="none" aria-hidden="true">
+            <path d="M 2 7 C 22 10, 44 4, 66 7" stroke="#A6533B" strokeWidth="2.2" strokeLinecap="round" />
+          </svg>
+        </div>
+
         {/* Circular Scroll Indicator */}
         <a href="#experience" className="scroll-indicator" aria-label="Scroll to The Maitri Katta Experience">
           <div className="scroll-circle">
@@ -275,6 +299,17 @@ export default function Hero({ onOpenSpace }) {
             <span>GOOD</span>
             <span>TIMES</span>
           </div>
+        </div>
+
+        {/* Bollywood Character Cutout Layer (Munna Bhai & Circuit on Motorcycle) */}
+        <div className="hero-character-layer" aria-hidden="true">
+          <img
+            src="/assets/bollywood-duo.png"
+            alt="Munna Bhai and Circuit riding motorcycle towards Maitri Katta"
+            className="character-cutout-img"
+            loading="eager"
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>
