@@ -1,0 +1,476 @@
+/* ==========================================================================
+   MAITRI KATTA — FLOATING TRANSPARENT NAVBAR
+   Art Direction: Cinematic Hospitality, Editorial Elegance & Tactile Restraint
+   Base Palette: #FFF7E8 (Warm White), #FFC900 (Mustard Yellow), #241915 (Charcoal)
+   ========================================================================== */
+
+.floating-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Floating Transparent at top of homepage */
+.floating-navbar.is-transparent {
+  background: linear-gradient(180deg, rgba(16, 10, 8, 0.65) 0%, rgba(16, 10, 8, 0.2) 65%, transparent 100%);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Translucent Glass on Scroll & on Inner Pages */
+.floating-navbar.is-scrolled {
+  background: rgba(20, 14, 11, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 247, 232, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Navbar Inner Container (Desktop Full Width, Vertical Centering) */
+.navbar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.65rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  transition: padding 0.3s ease;
+}
+
+.floating-navbar.is-scrolled .navbar-inner {
+  padding: 0.45rem 2.5rem;
+}
+
+/* ==========================================================================
+   1. BRAND LOGO (Left Aligned, Prominent Size, Natural Presentation)
+   ========================================================================== */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.navbar-brand-logo {
+  height: clamp(88px, 6.5vw, 104px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.45));
+  transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
+}
+
+.floating-navbar.is-scrolled .navbar-brand-logo {
+  height: 76px;
+}
+
+/* ==========================================================================
+   2. DESKTOP NAVIGATION (Centered, Single Line, Warm White)
+   ========================================================================== */
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  flex-shrink: 0;
+}
+
+.navbar-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.15rem;
+  text-decoration: none;
+  color: rgba(255, 247, 232, 0.9);
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+/* Thin Mustard-Yellow Underline for Active Link */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-logo-yellow, #FFC900);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-link:hover {
+  color: #FFFFFF;
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(0.4);
+}
+
+.navbar-link.is-active {
+  color: var(--color-logo-yellow, #FFC900);
+}
+
+.navbar-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   3. ACTIONS CLUSTER (Right Aligned: Phone, WhatsApp, Cart)
+   ========================================================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Phone: Minimal and Unboxed */
+.navbar-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 247, 232, 0.85);
+  text-decoration: none;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 0.35rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-phone:hover {
+  color: #FFFFFF;
+}
+
+.navbar-phone-icon {
+  color: var(--color-logo-yellow, #FFC900);
+  flex-shrink: 0;
+}
+
+/* WhatsApp CTA: Clean Yellow Button, Compact Dimensions */
+.btn-navbar-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-logo-yellow, #FFC900);
+  color: var(--color-charcoal, #241915);
+  padding: 0.52rem 1.15rem;
+  border-radius: 6px;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid rgba(36, 25, 21, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-navbar-whatsapp:hover {
+  background-color: #ffd633;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 201, 0, 0.35);
+}
+
+.wa-btn-icon {
+  color: var(--color-charcoal, #241915);
+  flex-shrink: 0;
+}
+
+/* Cart Trigger: Minimal Outline Shopping Bag, No Heavy Box */
+.navbar-cart-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.35rem;
+  color: rgba(255, 247, 232, 0.9);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-cart-trigger:hover {
+  color: var(--color-logo-yellow, #FFC900);
+  transform: scale(1.05);
+}
+
+.navbar-cart-count {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  background-color: var(--color-primary-red, #D71920);
+  color: #FFFFFF;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #140e0b;
+}
+
+/* Hamburger Toggle for Mobile */
+.navbar-hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #FFF7E8;
+  cursor: pointer;
+  padding: 0.35rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-hamburger:hover {
+  color: var(--color-logo-yellow, #FFC900);
+}
+
+/* ==========================================================================
+   4. MOBILE NAVIGATION OVERLAY (Full Screen Translucent)
+   ========================================================================== */
+
+.navbar-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 11, 8, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: mobileFadeIn 0.25s ease-out forwards;
+}
+
+@keyframes mobileFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-overlay-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 247, 232, 0.08);
+}
+
+.mobile-topbar-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mobile-topbar-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+}
+
+.mobile-close-btn {
+  background: transparent;
+  border: none;
+  color: #FFF7E8;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.mobile-close-btn:hover {
+  color: var(--color-logo-yellow, #FFC900);
+}
+
+.navbar-mobile-content {
+  padding: 2rem 1.75rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 75px);
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.navbar-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.navbar-mobile-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.25rem;
+  border-bottom: 1px solid rgba(255, 247, 232, 0.06);
+  color: rgba(255, 247, 232, 0.9);
+  text-decoration: none;
+  font-family: var(--font-display, 'Anton', sans-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.navbar-mobile-item:hover,
+.navbar-mobile-item.is-active {
+  color: var(--color-logo-yellow, #FFC900);
+  padding-left: 0.5rem;
+}
+
+.mobile-item-arrow {
+  font-size: 1.25rem;
+  color: var(--color-logo-yellow, #FFC900);
+  opacity: 0.7;
+}
+
+.navbar-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding-top: 1.5rem;
+}
+
+.btn-mobile-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: var(--color-logo-yellow, #FFC900);
+  color: var(--color-charcoal, #241915);
+  padding: 0.9rem;
+  border-radius: 6px;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn-mobile-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 247, 232, 0.2);
+  border-radius: 6px;
+  color: #FFF7E8;
+  text-decoration: none;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.navbar-mobile-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 247, 232, 0.5);
+  letter-spacing: 0.06em;
+  padding-top: 1.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1120px) {
+  .navbar-inner {
+    padding: 1rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .navbar-menu {
+    gap: 1.5rem;
+  }
+
+  .navbar-phone {
+    display: none;
+  }
+}
+
+@media (max-width: 940px) {
+  .navbar-inner {
+    padding: 0.55rem 1.5rem;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+  }
+
+  .navbar-brand-logo {
+    height: 68px;
+  }
+
+  .floating-navbar.is-scrolled .navbar-brand-logo {
+    height: 56px;
+  }
+
+  .btn-navbar-whatsapp {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .navbar-inner {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand-logo {
+    height: 58px;
+  }
+
+  .floating-navbar.is-scrolled .navbar-brand-logo {
+    height: 50px;
+  }
+
+  .btn-navbar-whatsapp span {
+    display: none;
+  }
+
+  .btn-navbar-whatsapp {
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+}

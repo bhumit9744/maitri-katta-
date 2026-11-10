@@ -22,3 +22,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw asset archive & temporary test artifacts
+archive_raw_assets/
+screenshots/
+.netlify/
+.gemini/
+.agent/
+.agents/
+.gsd/
+GSD-STYLE.md
+PROJECT_RULES.md
+VERSION
+adapters/
+menu_raw_extracted.json
+model_capabilities.yaml
+
+

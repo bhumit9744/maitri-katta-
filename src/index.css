@@ -1,28 +1,41 @@
+/* MAITRI KATTA 2.0 — BRAND DESIGN SYSTEM */
+
 :root {
-  --color-ivory: #F3EEE5;
-  --color-ivory-light: #FBF8F3;
-  --color-cream: #EAE3D6;
-  --color-charcoal: #25251F;
-  --color-charcoal-light: #48453D;
-  --color-charcoal-muted: rgba(37, 37, 31, 0.65);
-  --color-charcoal-faint: rgba(37, 37, 31, 0.1);
-  --color-olive: #3B4029;
-  --color-olive-dark: #2A2E1D;
-  --color-olive-light: #52593b;
-  --color-taupe: #A59A86;
-  --color-taupe-light: #C2B8A6;
-  --color-terracotta: #A6533B;
-  --color-secondary-text: #625F56;
-  --color-border-fine: rgba(37, 37, 31, 0.22);
-  --color-border-faint: rgba(37, 37, 31, 0.08);
+  /* Brand Color Palette */
+  --color-primary-red: #D71920;
+  --color-logo-yellow: #FFC900;
+  --color-warm-cream: #FFF7E8;
+  --color-charcoal: #241915;
+  --color-deep-red: #981B1E;
+
+  /* Tonal Derivatives */
+  --color-cream-subtle: #F6EDDC;
+  --color-cream-muted: #E8DCC6;
+  --color-charcoal-muted: #3D2D27;
+  --color-charcoal-faint: rgba(36, 25, 21, 0.08);
+  --color-charcoal-border: rgba(36, 25, 21, 0.16);
+  --color-red-faint: rgba(215, 25, 32, 0.08);
+  --color-yellow-faint: rgba(255, 201, 0, 0.14);
   --color-white: #FFFFFF;
 
-  --font-serif: 'Bodoni Moda', Didot, 'Didot LT STD', 'Bodoni MT', Garamond, Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-script: 'Caveat', cursive, sans-serif;
+  /* Typography */
+  --font-display: 'Anton', 'Archivo Black', sans-serif;
+  --font-headline: 'Barlow Condensed', -apple-system, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-marathi: 'Noto Sans Devanagari', -apple-system, sans-serif;
 
-  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: all 0.25s ease-out;
+  /* Transitions */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s ease-out;
+  --transition-smooth: 0.35s var(--ease-cinematic);
+
+  /* Elevation */
+  --shadow-warm-sm: 0 2px 8px rgba(36, 25, 21, 0.06);
+  --shadow-warm-md: 0 8px 24px rgba(36, 25, 21, 0.1);
+  --shadow-warm-lg: 0 16px 40px rgba(36, 25, 21, 0.14);
+  --shadow-retro: 4px 4px 0px var(--color-charcoal);
+  --shadow-retro-red: 4px 4px 0px var(--color-deep-red);
 }
 
 *, *::before, *::after {
@@ -36,64 +49,259 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-ivory);
+  background-color: var(--color-warm-cream);
   color: var(--color-charcoal);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--color-ivory);
+  background-color: var(--color-warm-cream);
   color: var(--color-charcoal);
-  line-height: 1.5;
+  font-family: var(--font-body);
+  line-height: 1.6;
   overflow-x: hidden;
-  position: relative;
+  selection-background-color: var(--color-logo-yellow);
+  selection-color: var(--color-charcoal);
 }
 
 ::selection {
-  background-color: var(--color-olive);
-  color: var(--color-ivory-light);
+  background: var(--color-logo-yellow);
+  color: var(--color-charcoal);
 }
 
+/* Base Typography Classes */
+h1, h2, h3, h4, .headline-font {
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+.headline-expressive {
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.editorial-accent {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+}
+
+p, span, a, input, button, select, textarea {
+  font-family: var(--font-body);
+}
+
+/* Image Defaults */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-button {
-  border: none;
-  background: none;
-  font-family: inherit;
+/* Container */
+.container-custom {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* Bollywood Film Strip Element */
+.film-strip-border {
+  position: relative;
+  border-top: 5px solid var(--color-charcoal);
+  border-bottom: 5px solid var(--color-charcoal);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-charcoal) 0px,
+    var(--color-charcoal) 16px,
+    transparent 16px,
+    transparent 28px
+  );
+  height: 12px;
+  width: 100%;
+}
+
+/* Retro Stamp / Badge */
+.retro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-logo-yellow);
+  color: var(--color-charcoal);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border: 1.5px solid var(--color-charcoal);
+  box-shadow: 2px 2px 0px var(--color-charcoal);
+}
+
+.retro-badge-red {
+  background-color: var(--color-primary-red);
+  color: var(--color-warm-cream);
+  border-color: var(--color-deep-red);
+  box-shadow: 2px 2px 0px var(--color-deep-red);
+}
+
+/* Button System */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-primary-red);
+  color: var(--color-warm-cream);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid var(--color-deep-red);
+  box-shadow: 3px 3px 0px var(--color-charcoal);
   cursor: pointer;
-  color: inherit;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
 }
 
-img, svg {
-  display: block;
-  max-width: 100%;
+.btn-primary:hover {
+  background-color: var(--color-deep-red);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--color-charcoal);
 }
 
-/* Custom minimal scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+.btn-primary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--color-charcoal);
 }
-::-webkit-scrollbar-track {
-  background: var(--color-ivory);
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-warm-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid var(--color-charcoal);
+  box-shadow: 3px 3px 0px var(--color-charcoal);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
 }
-::-webkit-scrollbar-thumb {
-  background: var(--color-taupe);
+
+.btn-secondary:hover {
+  background-color: var(--color-logo-yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--color-charcoal);
+}
+
+.btn-secondary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--color-charcoal);
+}
+
+.btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-logo-yellow);
+  color: var(--color-charcoal);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid var(--color-charcoal);
+  box-shadow: 3px 3px 0px var(--color-charcoal);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-yellow:hover {
+  background-color: #ffe04d;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--color-charcoal);
+}
+
+/* Veg / Non-Veg Indicator Icon */
+.food-type-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
   border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-olive);
+  flex-shrink: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.food-type-icon.veg {
+  border: 2px solid #2e7d32;
+  background-color: #ffffff;
+}
+
+.food-type-icon.veg::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2e7d32;
+}
+
+.food-type-icon.non-veg {
+  border: 2px solid #d32f2f;
+  background-color: #ffffff;
+}
+
+.food-type-icon.non-veg::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 9px solid #d32f2f;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-warm-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-charcoal-muted);
+  border: 2px solid var(--color-warm-cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-red);
 }

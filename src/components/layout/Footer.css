@@ -1,0 +1,533 @@
+/* ==========================================================================
+   MAITRI KATTA — RED & YELLOW CONTRAST FOOTER THEME
+   User Request: "make the footer in red and keep this in yellow or vice versa"
+
+   Palette:
+   - Primary Body: Signature Deep Crimson Red (#8C161D / #9C171C)
+   - Bottom Strip & Accents: Rich Mustard Yellow (#FFC900 / #FFBA00)
+   - Contrast Text: Warm Cream (#FFF7E8) & Crisp White (#FFFFFF)
+   - Accent Text: Charcoal Black (#241915) on Yellow Strip
+   ========================================================================== */
+
+.refined-footer-root {
+  background-color: #8C161D;
+  color: #FFF7E8;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-body, 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif);
+  border-top: 2px solid #FFC900;
+  padding-top: 2.85rem;
+  padding-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Subtle Botanical Leaf Silhouettes Framing Corners
+   -------------------------------------------------------------------------- */
+.corner-foliage {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.foliage-top-left {
+  top: 0;
+  left: 0;
+  width: clamp(170px, 17vw, 250px);
+  height: auto;
+}
+
+.foliage-bottom-right {
+  bottom: 45px;
+  right: 0;
+  width: clamp(180px, 18vw, 270px);
+  height: auto;
+}
+
+.refined-footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: clamp(1.25rem, 3.5vw, 3rem);
+  padding-right: clamp(1.25rem, 3.5vw, 3rem);
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   1. BRAND HEADER & SLOGAN (Centered Lockup)
+   ========================================================================== */
+
+.refined-brand-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.85rem;
+}
+
+/* Centered Prominent Marathi Emblem Logo */
+.refined-logo-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.refined-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.refined-logo-link:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.refined-marathi-logo {
+  height: clamp(82px, 8.5vw, 108px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+}
+
+/* Slogan Row Flanked by Thin Lines */
+.refined-slogan-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 860px;
+}
+
+.refined-slogan-line {
+  flex: 1;
+  height: 1px;
+  background-color: #FFC900;
+  opacity: 0.6;
+  min-width: 40px;
+}
+
+.refined-slogan-text {
+  font-family: var(--font-editorial, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none !important;
+  color: #FFF7E8;
+  margin: 0;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Centered Mustard Yellow Brush Flourish under "Garden Vibes" */
+.refined-brush-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.footer-yellow-brush {
+  width: 120px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Thin Horizontal Separator Line */
+.refined-section-divider {
+  border: none;
+  height: 1px;
+  background-color: #FFC900;
+  opacity: 0.25;
+  margin: 0 0 2.25rem 0;
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. FOUR INFORMATION COLUMNS (Visit, Hours, Contact, Follow)
+   ========================================================================== */
+
+.refined-info-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr 1fr 1fr;
+  align-items: stretch;
+  padding-bottom: 2.75rem;
+}
+
+.refined-column {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.75rem;
+  border-right: 1px solid rgba(255, 201, 0, 0.22);
+}
+
+.refined-column.col-visit {
+  padding-left: 0;
+}
+
+.refined-column.col-social {
+  padding-right: 0;
+  border-right: none;
+}
+
+/* Header Row with Yellow Icon and Spaced Title */
+.column-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.column-icon-disc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFC900;
+  flex-shrink: 0;
+}
+
+.column-icon-glyph {
+  color: #FFC900;
+}
+
+.column-heading {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #FFC900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Column 1: Address Text & Directions Button */
+.column-address-text {
+  font-style: normal;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255, 247, 232, 0.9);
+  margin: 0 0 1.15rem 0;
+}
+
+.column-action-wrap {
+  margin-top: auto;
+}
+
+.btn-pill-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 1.15rem;
+  border: 1.2px solid #FFC900;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #FFC900;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-pill-directions .btn-arrow {
+  color: #FFC900;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btn-pill-directions:hover {
+  background-color: #FFC900;
+  color: #8C161D;
+}
+
+.btn-pill-directions:hover .btn-arrow {
+  color: #8C161D;
+  transform: translate(1px, -1px);
+}
+
+/* Column 2: Hours & Column 3: Contact */
+.column-highlight-time {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: clamp(1.4rem, 1.9vw, 1.65rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin: 0.15rem 0 0.35rem 0;
+}
+
+.column-highlight-phone {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: clamp(1.4rem, 1.9vw, 1.65rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  text-decoration: none;
+  margin: 0.15rem 0 0.35rem 0;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.column-highlight-phone:hover {
+  color: #FFC900;
+}
+
+.column-subtext {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(255, 247, 232, 0.82);
+  margin: 0 0 0.85rem 0;
+}
+
+/* Yellow Horizontal Accent Line below subtitle */
+.yellow-accent-dash {
+  display: block;
+  width: 38px;
+  height: 2.5px;
+  background-color: #FFC900;
+  border-radius: 2px;
+  margin-top: auto;
+}
+
+/* Column 4: Instagram Handle & WhatsApp CTA */
+.column-insta-handle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFF7E8;
+  text-decoration: none;
+  margin-bottom: 1.15rem;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.column-insta-handle:hover {
+  color: #FFC900;
+}
+
+.btn-pill-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.58rem 1.25rem;
+  background-color: #FFC000;
+  color: #241915;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-pill-whatsapp svg {
+  color: #241915;
+  flex-shrink: 0;
+}
+
+.btn-pill-whatsapp .btn-arrow {
+  color: #241915;
+  transition: transform 0.2s ease;
+}
+
+.btn-pill-whatsapp:hover {
+  background-color: #FFCD1A;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-pill-whatsapp:hover .btn-arrow {
+  transform: translate(1px, -1px);
+}
+
+/* ==========================================================================
+   3. FLOWING ORGANIC WAVE & MUSTARD YELLOW BOTTOM STRIP
+   ========================================================================== */
+
+.refined-closing-strip {
+  position: relative;
+  width: 100%;
+}
+
+.closing-wave-box {
+  width: 100%;
+  line-height: 0;
+  margin-bottom: -1px;
+}
+
+.closing-wave-svg {
+  display: block;
+  width: 100%;
+  height: 56px;
+}
+
+.closing-bottom-bar {
+  background-color: #FFC900;
+  color: #241915;
+  padding: 0.85rem 0 1.15rem;
+}
+
+.closing-inner-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Centered Brand Signature */
+.bottom-signature-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #8C161D;
+  text-transform: uppercase;
+}
+
+.signature-flank-line {
+  width: 44px;
+  height: 1.5px;
+  background-color: #8C161D;
+  opacity: 0.75;
+}
+
+.signature-brand-text {
+  color: #8C161D;
+  font-weight: 800;
+}
+
+.signature-bullet {
+  color: #8C161D;
+  font-size: 0.85rem;
+}
+
+.signature-city-text {
+  color: #8C161D;
+  font-weight: 800;
+}
+
+.signature-tagline {
+  color: #241915;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.bottom-copyright-text {
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: rgba(36, 25, 21, 0.85);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+  .refined-info-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.25rem;
+  }
+
+  .refined-column {
+    padding: 0 1.5rem;
+  }
+
+  .refined-column.col-visit {
+    padding-left: 0;
+  }
+
+  .refined-column.col-hours {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .refined-column.col-contact {
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 201, 0, 0.22);
+    padding-top: 1.5rem;
+  }
+
+  .refined-column.col-social {
+    padding-right: 0;
+    border-top: 1px solid rgba(255, 201, 0, 0.22);
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .refined-footer-root {
+    padding-top: 2rem;
+  }
+
+  .refined-logo-lockup {
+    margin-bottom: 1.25rem;
+  }
+
+  .refined-marathi-logo {
+    height: 70px;
+  }
+
+  .refined-slogan-row {
+    gap: 0.75rem;
+  }
+
+  .refined-slogan-line {
+    min-width: 20px;
+  }
+
+  .refined-slogan-text {
+    font-size: 1.15rem;
+    white-space: normal;
+  }
+
+  .footer-yellow-brush {
+    width: 100px;
+  }
+
+  .refined-info-grid {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .refined-column {
+    padding: 0 !important;
+    border-right: none !important;
+    border-top: none !important;
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid rgba(255, 201, 0, 0.22) !important;
+  }
+
+  .refined-column.col-social {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .closing-inner-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .bottom-signature-lockup {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .signature-flank-line {
+    display: none;
+  }
+}

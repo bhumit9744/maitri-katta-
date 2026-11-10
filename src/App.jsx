@@ -1,65 +1,61 @@
-import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import EditorialExperience from './components/EditorialExperience';
-import MenuSection from './components/MenuSection';
-import TheCelebration from './components/TheCelebration';
-import TheExperience from './components/TheExperience';
-import TheLocation from './components/TheLocation';
-import Footer from './components/Footer';
-import SpaceModal from './components/SpaceModal';
-import BookingModal from './components/BookingModal';
+import React, { useEffect, lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import CartDrawer from './components/cart/CartDrawer';
 import './App.css';
 
-export default function App() {
-  const [bookingModalOpen, setBookingModalOpen] = useState(false);
-  const [spaceModalOpen, setSpaceModalOpen] = useState(false);
+// Route-level code-splitting for optimal first-load performance
+const Home = lazy(() => import('./pages/Home'));
+const Menu = lazy(() => import('./pages/Menu'));
+const About = lazy(() => import('./pages/About'));
+const Gallery = lazy(() => import('./pages/Gallery'));
+const Contact = lazy(() => import('./pages/Contact'));
 
-  const handleOpenBooking = () => setBookingModalOpen(true);
-  const handleCloseBooking = () => setBookingModalOpen(false);
-
-  const handleOpenSpace = () => setSpaceModalOpen(true);
-  const handleCloseSpace = () => setSpaceModalOpen(false);
-
+// Minimal, brand-aligned route transition fallback
+function RouteLoadingFallback() {
   return (
-    <div className="maitri-app">
-      {/* Editorial Navbar */}
-      <Navbar onOpenBooking={handleOpenBooking} />
-
-      <main id="main-content">
-        {/* Section 1: Cinematic Editorial Hero */}
-        <Hero onOpenSpace={handleOpenSpace} />
-
-        {/* Section 2: Editorial Experience — Made for Together */}
-        <EditorialExperience onOpenSpace={handleOpenSpace} />
-
-        {/* Section 3: The Culinary Repertoire / From the Kitchen */}
-        <MenuSection onOpenBooking={handleOpenBooking} />
-
-        {/* Section 4: The Celebration — Editorial Photography Wall */}
-        <TheCelebration onOpenBooking={handleOpenBooking} />
-
-        {/* Section 5: The Experience — Have some time. */}
-        <TheExperience onOpenSpace={handleOpenSpace} onOpenBooking={handleOpenBooking} />
-
-        {/* Section 6: Location — Editorial Two-Page Food Magazine Spread */}
-        <TheLocation />
-      </main>
-
-      {/* Footer & Location Anchor */}
-      <Footer onOpenBooking={handleOpenBooking} />
-
-      {/* Interactive Modals */}
-      <SpaceModal
-        isOpen={spaceModalOpen}
-        onClose={handleCloseSpace}
-        onBookTable={handleOpenBooking}
-      />
-
-      <BookingModal
-        isOpen={bookingModalOpen}
-        onClose={handleCloseBooking}
-      />
+    <div className="route-loader-wrapper" role="status" aria-label="Loading page...">
+      <div className="route-loader-spinner" />
     </div>
+  );
+}
+
+// Automatically scroll to top on route navigation
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <CartProvider>
+        <ScrollToTop />
+        <div className="maitri-2-app">
+          <Header />
+          <main id="main-content">
+            <Suspense fallback={<RouteLoadingFallback />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+          <CartDrawer />
+        </div>
+      </CartProvider>
+    </BrowserRouter>
   );
 }

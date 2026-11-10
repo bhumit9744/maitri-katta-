@@ -1,15 +1,37 @@
-.maitri-app {
+/* APP-LEVEL LAYOUT */
+
+.maitri-2-app {
   min-height: 100vh;
-  min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-ivory);
+  background-color: var(--color-warm-cream);
   color: var(--color-charcoal);
-  position: relative;
-  overflow-x: hidden;
 }
 
 #main-content {
-  flex: 1 0 auto;
-  position: relative;
+  flex: 1;
+}
+
+/* Route code-splitting transition spinner */
+.route-loader-wrapper {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.route-loader-spinner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid rgba(215, 25, 32, 0.15);
+  border-top-color: var(--color-primary-red, #D71920);
+  animation: routeSpin 0.75s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+@keyframes routeSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
